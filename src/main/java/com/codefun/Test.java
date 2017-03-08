@@ -2,7 +2,7 @@ package com.codefun;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.*;
 
 /**
  * 
@@ -13,15 +13,28 @@ import java.util.Calendar;
 
 public class Test {
 
+
 	public static void main(String[] args) {
 
-		
+		System.out.println(2.0-1.9);
+		System.out.println(0.05+0.01);
+		/*
+		List<String> a = new ArrayList<String>();
+		a.add("1");
+		a.add("2");
+		for (String temp : a) {
+			if("2".equals(temp)){
+				a.remove(temp);
+			}
+		}
+		System.out.println(a.get(0));
+		/*
 		for(int i =0;i<24;i++){
 			printProid(i,10,0);
 			printProid(i,40,0);		
-			
+
 		}
-		
+		*/
 		
 	}
 

@@ -17,14 +17,14 @@ public class ChannelDemo {
 	public static void main(String[] args) {
 		RandomAccessFile aFile = null;
 		try {
-			aFile= new RandomAccessFile("C:\\aaa.txt",
+			aFile= new RandomAccessFile("C:\\set.txt",
 					"rw");
 			FileChannel inChannel = aFile.getChannel();
 
 			ByteBuffer buf = ByteBuffer.allocate(4);
 			System.out.printf("position:%s limit:%s capacity:%s \n",buf.position(),buf.limit(),buf.capacity());
-			int bytesRead = inChannel.read(buf);
-			while (bytesRead != -1) {
+			int bytesRead = -1;
+			while ((bytesRead= inChannel.read(buf)) != -1) {
 				System.out.printf("position:%s limit:%s capacity:%s \n",buf.position(),buf.limit(),buf.capacity());
 
 				System.out.println("Read " + bytesRead);
@@ -36,7 +36,6 @@ public class ChannelDemo {
 				System.out.printf("position:%s limit:%s capacity:%s \n",buf.position(),buf.limit(),buf.capacity());
 				buf.clear();
 				System.out.printf("position:%s limit:%s capacity:%s \n",buf.position(),buf.limit(),buf.capacity());
-				bytesRead = inChannel.read(buf);
 			}
 			buf.clear();
 			buf.put(new byte[]{97,98,99,100});

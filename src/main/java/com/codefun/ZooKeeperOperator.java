@@ -101,7 +101,7 @@ public class ZooKeeperOperator extends AbstractZooKeeper {
 	            
 	            System.out.println("节点孩子信息:");
 	            zkoperator.getChild("/root");
-	               
+
 	            zkoperator.close();
 	            
 	            
