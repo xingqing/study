@@ -75,8 +75,7 @@ public class ZooKeeperOperator extends AbstractZooKeeper {
 	
 	 public static void main(String[] args) {
 		 try {   
-			 TimeUnit.HOURS.sleep(2);
-	            ZooKeeperOperator zkoperator = new ZooKeeperOperator();   
+	            ZooKeeperOperator zkoperator = new ZooKeeperOperator();
 	            zkoperator.connect("192.168.68.128:2181,192.168.68.129:2181,192.168.68.130:2181");
 	            log.info("sdfsdfsdf");
 	            byte[] data = new byte[]{'a','b','c','d'};   

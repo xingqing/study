@@ -24,6 +24,7 @@ public class ServerSocketDemo {
             while (null != (soc = ss.accept())) {
                 clients.add(soc);
                 new Thread(new Receiver(soc,"¿Í»§¶Ë"+i++)).start();
+                new Thread(new Sender(soc)).start();
             }
 
 

@@ -8,5 +8,8 @@
 </head>
 <body>
 	hello world ${mesg}
+
+	<a href="testServlet">KKKK</a>
+	<a href="./test/todo.do">DDDDD</a>
 </body>
 </html>

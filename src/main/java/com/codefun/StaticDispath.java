@@ -12,6 +12,11 @@ public class StaticDispath {
 		public class Person{};
 		public class Man extends Person {};
 		public class Woman extends Person {};
+
+		public void sayHi(Object obj){
+			System.out.println("Hi,Object");
+		}
+
 		public void sayHi(Person obj){
 			System.out.println("Hi,Person");
 		}
@@ -21,6 +26,9 @@ public class StaticDispath {
 		public void sayHi(Woman obj){
 			System.out.println("Hi,Woman");
 		}
+
+
+
 		public static void main(String[] args) {
 			StaticDispath dispath  = new StaticDispath();
 			Person  man = dispath.new Man();
