@@ -41,7 +41,7 @@ public class Feb extends RecursiveTask<Integer> {
 
 
         Feb d = new Feb(100);
-        ForkJoinPool forkJoinPool = new ForkJoinPool();//¶ÔÏß³Ì³ØµÄÀ©Õ¹
+        ForkJoinPool forkJoinPool = new ForkJoinPool();//å¯¹çº¿ç¨‹æ± çš„æ‰©å±•
         Future<Integer> result = forkJoinPool.submit(d);
         try {
             System.out.println(result.get());

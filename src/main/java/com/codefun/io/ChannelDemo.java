@@ -7,8 +7,8 @@ import java.nio.channels.FileChannel;
 
 /**
  * 
- * @author ×÷Õß : E-mail:
- * @version ´´½¨Ê±¼ä£º2016-8-1 ÏÂÎç3:23:32
+ * @author ä½œè€… : E-mail:
+ * @version åˆ›å»ºæ—¶é—´ï¼š2016-8-1 ä¸‹åˆ3:23:32
  * 
  */
 

@@ -12,18 +12,18 @@ import javax.annotation.PreDestroy;
 public class TestService {
 
     public TestService(){
-        System.out.println("TestService¹¹Ôìµ÷ÓÃ");
+        System.out.println("TestServiceæž„é€ è°ƒç”¨");
     }
 
 
     @PostConstruct
     private void myInit(){
-        System.out.println("TestService PostConstructµ÷ÓÃ");
+        System.out.println("TestService PostConstructè°ƒç”¨");
     }
 
     @PreDestroy
     private void mydestroy(){
-        System.out.println("TestService PreDestroyµ÷ÓÃ");
+        System.out.println("TestService PreDestroyè°ƒç”¨");
     }
 
     public String todo(){

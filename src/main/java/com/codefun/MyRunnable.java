@@ -1,8 +1,8 @@
 package com.codefun;
 /** 
  * 
- * @author ×÷Õß :		E-mail: 
- * @version ´´½¨Ê±¼ä£º2016-7-29 ÏÂÎç2:40:00 
+ * @author ä½œè€… :		E-mail: 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2016-7-29 ä¸‹åˆ2:40:00 
  * 
  */
 

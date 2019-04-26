@@ -4,8 +4,8 @@ import java.util.concurrent.ThreadFactory;
 
 /** 
  * 
- * @author ×÷Õß :		E-mail: 
- * @version ´´½¨Ê±¼ä£º2016-7-29 ÏÂÎç1:33:27 
+ * @author ä½œè€… :		E-mail: 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2016-7-29 ä¸‹åˆ1:33:27 
  * 
  */
 

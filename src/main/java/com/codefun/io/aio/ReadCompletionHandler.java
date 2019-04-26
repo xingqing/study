@@ -45,7 +45,7 @@ public class ReadCompletionHandler implements
                     new CompletionHandler<Integer, ByteBuffer>() {
                         @Override
                         public void completed(Integer result, ByteBuffer buffer) {
-                            // Èç¹ûÃ»ÓĞ·¢ËÍÍê³É£¬¼ÌĞø·¢ËÍ
+                            // å¦‚æœæ²¡æœ‰å‘é€å®Œæˆï¼Œç»§ç»­å‘é€
                             if (buffer.hasRemaining())
                                 channel.write(buffer, buffer, this);
                         }

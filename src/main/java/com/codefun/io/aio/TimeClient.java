@@ -13,7 +13,7 @@ public class TimeClient {
             try {
                 port = Integer.valueOf(args[0]);
             } catch (NumberFormatException e) {
-                // ²ÉÓÃÄ¬ÈÏÖµ
+                // é‡‡ç”¨é»˜è®¤å€¼
             }
         }
         new Thread(new AsyncTimeClientHandler("127.0.0.1", port),

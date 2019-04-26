@@ -3,8 +3,8 @@ package com.codefun;
 
 /** 
  * 
- * @author ×÷Õß :		E-mail: 
- * @version ´´½¨Ê±¼ä£º2016-11-29 ÉÏÎç9:43:49 
+ * @author ä½œè€… :		E-mail: 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2016-11-29 ä¸Šåˆ9:43:49 
  * 
  */
 
@@ -13,7 +13,7 @@ public class SingleObj {
 	private static  SingleObj instance = null;
 	public static int i = 0;
 	private SingleObj(){
-		System.out.println("ÊµÀı»¯SingleObj");
+		System.out.println("å®ä¾‹åŒ–SingleObj");
 	
 	}
 	

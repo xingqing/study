@@ -8,23 +8,23 @@ import java.util.concurrent.Phaser;
 public class MyTest {
 
     public static void main(String[] args) {
-        Phaser phaser = new Phaser(3) {// ¹²ÓĞ3¸ö¹¤×÷Ïß³Ì£¬Òò´ËÔÚ¹¹Ôìº¯ÊıÖĞ¸³ÖµÎª3
+        Phaser phaser = new Phaser(3) {// å…±æœ‰3ä¸ªå·¥ä½œçº¿ç¨‹ï¼Œå› æ­¤åœ¨æ„é€ å‡½æ•°ä¸­èµ‹å€¼ä¸º3
             @Override
             protected boolean onAdvance(int phase, int registeredParties) {
-                System.out.println("\n=========»ªÀöµÄ·Ö¸îÏß=============");
+                System.out.println("\n=========åä¸½çš„åˆ†å‰²çº¿=============");
                 return registeredParties == 0;
             }
         };
-        System.out.println("³ÌĞò¿ªÊ¼Ö´ĞĞ");
+        System.out.println("ç¨‹åºå¼€å§‹æ‰§è¡Œ");
         char a = 'a';
-        for (int i = 0; i < 3; i++) { // ´´½¨²¢Æô¶¯3¸öÏß³Ì
+        for (int i = 0; i < 3; i++) { // åˆ›å»ºå¹¶å¯åŠ¨3ä¸ªçº¿ç¨‹
             new MyThread((char) (a + i), phaser).start();
         }
 
-        while (!phaser.isTerminated()) {// Ö»Òªphaser²»ÖÕ½á£¬Ö÷Ïß³Ì¾ÍÑ­»·µÈ´ı
+        while (!phaser.isTerminated()) {// åªè¦phaserä¸ç»ˆç»“ï¼Œä¸»çº¿ç¨‹å°±å¾ªç¯ç­‰å¾…
             Thread.yield();
         }
-        System.out.println("³ÌĞò½áÊø");
+        System.out.println("ç¨‹åºç»“æŸ");
     }
 }
 
@@ -40,17 +40,17 @@ class MyThread extends Thread {
     @Override
     public void run() {
         while (!phaser.isTerminated()) {
-            for (int i = 0; i < 10; i++) { // ½«µ±Ç°×ÖÄ¸´òÓ¡10´Î
+            for (int i = 0; i < 10; i++) { // å°†å½“å‰å­—æ¯æ‰“å°10æ¬¡
                 System.out.print(c + " ");
             }
-            // ´òÓ¡Íêµ±Ç°×ÖÄ¸ºó£¬½«Æä¸üĞÂÎªÆäºóµÚÈı¸ö×ÖÄ¸£¬ÀıÈçb¸üĞÂÎªe£¬ÓÃÓÚÏÂÒ»½×¶Î´òÓ¡
+            // æ‰“å°å®Œå½“å‰å­—æ¯åï¼Œå°†å…¶æ›´æ–°ä¸ºå…¶åç¬¬ä¸‰ä¸ªå­—æ¯ï¼Œä¾‹å¦‚bæ›´æ–°ä¸ºeï¼Œç”¨äºä¸‹ä¸€é˜¶æ®µæ‰“å°
             c = (char) (c + 3);
             if (c > 'z') {
-                // Èç¹û³¬³öÁË×ÖÄ¸z£¬ÔòÔÚphaserÖĞ¶¯Ì¬¼õÉÙÒ»¸öÏß³Ì£¬²¢ÍË³öÑ­»·½áÊø±¾Ïß³Ì
+                // å¦‚æœè¶…å‡ºäº†å­—æ¯zï¼Œåˆ™åœ¨phaserä¸­åŠ¨æ€å‡å°‘ä¸€ä¸ªçº¿ç¨‹ï¼Œå¹¶é€€å‡ºå¾ªç¯ç»“æŸæœ¬çº¿ç¨‹
                 phaser.arriveAndDeregister();
                 break;
             } else {
-                // ·´Ö®£¬µÈ´ıÆäËûÏß³Ìµ½´ï½×¶ÎÖÕµã£¬ÔÙÒ»Æğ½øÈëÏÂÒ»¸ö½×¶Î
+                // åä¹‹ï¼Œç­‰å¾…å…¶ä»–çº¿ç¨‹åˆ°è¾¾é˜¶æ®µç»ˆç‚¹ï¼Œå†ä¸€èµ·è¿›å…¥ä¸‹ä¸€ä¸ªé˜¶æ®µ
                 phaser.arriveAndAwaitAdvance();
             }
         }

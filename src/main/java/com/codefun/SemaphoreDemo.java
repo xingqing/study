@@ -5,8 +5,8 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author ×÷Õß :		E-mail:
- * @version ´´½¨Ê±¼ä£º2016-8-1 ÉÏÎç9:44:39
+ * @author ä½œè€… :		E-mail:
+ * @version åˆ›å»ºæ—¶é—´ï¼š2016-8-1 ä¸Šåˆ9:44:39
  */
 
 public class SemaphoreDemo {
@@ -43,12 +43,12 @@ public class SemaphoreDemo {
 
         private void print() {
             String name = Thread.currentThread().getName();
-            System.out.printf("%s¼ÓÈë´òÓ¡Ô¤±¸ÈÎÎñ\n", name);
+            System.out.printf("%såŠ å…¥æ‰“å°é¢„å¤‡ä»»åŠ¡\n", name);
             try {
                 pv.acquire();
-                System.out.printf("%s´òÓ¡:%s\n", name, new Random().nextInt(200));
+                System.out.printf("%sæ‰“å°:%s\n", name, new Random().nextInt(200));
                 TimeUnit.SECONDS.sleep(2);
-                System.out.printf("%sÍê³É,ÊÍ·Å´òÓ¡»ú\n", name);
+                System.out.printf("%så®Œæˆ,é‡Šæ”¾æ‰“å°æœº\n", name);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {

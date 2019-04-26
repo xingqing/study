@@ -15,7 +15,7 @@ public class ClientSocket {
 
         try {
             Socket soc  = new Socket("127.0.0.1",7777);
-            new Thread(new ServerSocketDemo.Receiver(soc,"·şÎñ¶Ë")).start();
+            new Thread(new ServerSocketDemo.Receiver(soc,"æœåŠ¡ç«¯")).start();
             new Thread(new ServerSocketDemo.Sender(soc)).start();
         } catch (IOException e) {
             e.printStackTrace();

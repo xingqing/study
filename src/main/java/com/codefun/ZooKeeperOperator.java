@@ -1,7 +1,7 @@
 /**
  * ZooKeeperOperator.java
- * °æÈ¨ËùÓĞ(C) 2013 
- * ´´½¨:cuiran 2013-01-16 15:03:40
+ * ç‰ˆæƒæ‰€æœ‰(C) 2013 
+ * åˆ›å»º:cuiran 2013-01-16 15:03:40
  */
 package com.codefun;
 
@@ -27,7 +27,7 @@ public class ZooKeeperOperator extends AbstractZooKeeper {
 
 	/**
 	 * 
-	 *<b>function:</b>´´½¨³Ö¾ÃÌ¬µÄznode,±ÈÖ§³Ö¶à²ã´´½¨.±ÈÈçÔÚ´´½¨/parent/childµÄÇé¿öÏÂ,ÎŞ/parent.ÎŞ·¨Í¨¹ı
+	 *<b>function:</b>åˆ›å»ºæŒä¹…æ€çš„znode,æ¯”æ”¯æŒå¤šå±‚åˆ›å»º.æ¯”å¦‚åœ¨åˆ›å»º/parent/childçš„æƒ…å†µä¸‹,æ— /parent.æ— æ³•é€šè¿‡
 	 *@author cuiran
 	 *@createDate 2013-01-16 15:08:38
 	 *@param path
@@ -37,14 +37,14 @@ public class ZooKeeperOperator extends AbstractZooKeeper {
 	 */
 	public void create(String path,byte[] data)throws KeeperException, InterruptedException{
 		/**
-		 * ´Ë´¦²ÉÓÃµÄÊÇCreateModeÊÇPERSISTENT  ±íÊ¾The znode will not be automatically deleted upon client's disconnect.
-		 * EPHEMERAL ±íÊ¾The znode will be deleted upon the client's disconnect.
+		 * æ­¤å¤„é‡‡ç”¨çš„æ˜¯CreateModeæ˜¯PERSISTENT  è¡¨ç¤ºThe znode will not be automatically deleted upon client's disconnect.
+		 * EPHEMERAL è¡¨ç¤ºThe znode will be deleted upon the client's disconnect.
 		 */ 
 		this.zooKeeper.create(path, data, Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
 	}
 	/**
 	 * 
-	 *<b>function:</b>»ñÈ¡½ÚµãĞÅÏ¢
+	 *<b>function:</b>è·å–èŠ‚ç‚¹ä¿¡æ¯
 	 *@author cuiran
 	 *@createDate 2013-01-16 15:17:22
 	 *@param path
@@ -55,11 +55,11 @@ public class ZooKeeperOperator extends AbstractZooKeeper {
 		try{
 			List<String> list=this.zooKeeper.getChildren(path, false);
 			if(list.isEmpty()){
-				log.debug(path+"ÖĞÃ»ÓĞ½Úµã");
+				log.debug(path+"ä¸­æ²¡æœ‰èŠ‚ç‚¹");
 			}else{
-				log.debug(path+"ÖĞ´æÔÚ½Úµã");
+				log.debug(path+"ä¸­å­˜åœ¨èŠ‚ç‚¹");
 				for(String child:list){
-					log.debug("½ÚµãÎª£º"+child);
+					log.debug("èŠ‚ç‚¹ä¸ºï¼š"+child);
 				}
 			}
 		}catch (KeeperException.NoNodeException e) {
@@ -94,11 +94,11 @@ public class ZooKeeperOperator extends AbstractZooKeeper {
 	            zkoperator.create("/root/child2",data);
 	            System.out.println(Arrays.toString(zkoperator.getData("/root/child2")));   
 
-	            String zktest="ZooKeeperµÄJava API²âÊÔ";
+	            String zktest="ZooKeeperçš„Java APIæµ‹è¯•";
 	            zkoperator.create("/root/child3", zktest.getBytes());
-	            log.debug("»ñÈ¡ÉèÖÃµÄĞÅÏ¢£º"+new String(zkoperator.getData("/root/child3")));
+	            log.debug("è·å–è®¾ç½®çš„ä¿¡æ¯ï¼š"+new String(zkoperator.getData("/root/child3")));
 	            
-	            System.out.println("½Úµãº¢×ÓĞÅÏ¢:");
+	            System.out.println("èŠ‚ç‚¹å­©å­ä¿¡æ¯:");
 	            zkoperator.getChild("/root");
 
 	            zkoperator.close();

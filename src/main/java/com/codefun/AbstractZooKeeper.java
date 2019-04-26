@@ -1,7 +1,7 @@
 /**
  * AbstractZooKeeper.java
- * °æÈ¨ËùÓĞ(C) 2013 
- * ´´½¨:cuiran 2013-01-16 14:59:44
+ * ç‰ˆæƒæ‰€æœ‰(C) 2013 
+ * åˆ›å»º:cuiran 2013-01-16 14:59:44
  */
 package com.codefun;
 
@@ -24,7 +24,7 @@ import org.apache.zookeeper.Watcher.Event.KeeperState;
 public class AbstractZooKeeper implements Watcher {
 	private static Log log = LogFactory.getLog(AbstractZooKeeper.class.getName());
 
-	//»º´æÊ±¼ä
+	//ç¼“å­˜æ—¶é—´
 	 private static final int SESSION_TIME   = 2000;   
 	 protected ZooKeeper zooKeeper;
 	 protected CountDownLatch countDownLatch=new CountDownLatch(1);

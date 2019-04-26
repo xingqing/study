@@ -23,7 +23,7 @@ public class ServerSocketDemo {
             List<Socket>  clients = new ArrayList<Socket>();
             while (null != (soc = ss.accept())) {
                 clients.add(soc);
-                new Thread(new Receiver(soc,"¿Í»§¶Ë"+i++)).start();
+                new Thread(new Receiver(soc,"å®¢æˆ·ç«¯"+i++)).start();
                 new Thread(new Sender(soc)).start();
             }
 

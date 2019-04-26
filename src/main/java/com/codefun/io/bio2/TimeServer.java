@@ -21,7 +21,7 @@ public class TimeServer {
             try {
                 port = Integer.valueOf(args[0]);
             } catch (NumberFormatException e) {
-                // ²ÉÓÃÄ¬ÈÏÖµ
+                // é‡‡ç”¨é»˜è®¤å€¼
             }
         }
         ServerSocket server = null;
@@ -30,7 +30,7 @@ public class TimeServer {
             System.out.println("The time server is start in port : " + port);
             Socket socket = null;
             TimeServerHandlerExecutePool singleExecutor = new TimeServerHandlerExecutePool(
-                    50, 10000);// ´´½¨IOÈÎÎñÏß³Ì³Ø
+                    50, 10000);// åˆ›å»ºIOä»»åŠ¡çº¿ç¨‹æ± 
             while (true) {
                 socket = server.accept();
                 singleExecutor.execute(new TimeServerHandler(socket));

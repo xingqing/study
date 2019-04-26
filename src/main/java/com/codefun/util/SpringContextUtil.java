@@ -12,7 +12,7 @@ public class SpringContextUtil implements ApplicationContextAware {
     private  static  ApplicationContext context;
 
     private SpringContextUtil() {
-        System.out.println("SpringContextUtil构造被调用");
+        System.out.println("SpringContextUtil鏋勯�犺璋冪敤");
     }
 
 

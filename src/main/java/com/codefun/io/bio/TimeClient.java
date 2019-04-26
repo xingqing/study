@@ -20,7 +20,7 @@ public class TimeClient {
             try {
                 port = Integer.valueOf(args[0]);
             } catch (NumberFormatException e) {
-                // ²ÉÓÃÄ¬ÈÏÖµ
+                // é‡‡ç”¨é»˜è®¤å€¼
             }
         }
         Socket socket = null;
@@ -36,7 +36,7 @@ public class TimeClient {
             String resp = in.readLine();
             System.out.println("Now is : " + resp);
         } catch (Exception e) {
-            //²»ĞèÒª´¦Àí
+            //ä¸éœ€è¦å¤„ç†
         } finally {
             if (out != null) {
                 out.close();

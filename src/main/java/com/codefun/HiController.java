@@ -10,8 +10,8 @@ import org.springframework.web.servlet.mvc.AbstractController;
 
 /** 
  * 
- * @author ×÷Õß :		E-mail: 
- * @version ´´½¨Ê±¼ä£º2016-7-12 ÏÂÎç2:36:58 
+ * @author ä½œè€… :		E-mail: 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2016-7-12 ä¸‹åˆ2:36:58 
  * 
  */
 @Controller
@@ -22,7 +22,7 @@ public class HiController extends AbstractController {
 	protected ModelAndView handleRequestInternal(HttpServletRequest arg0,
 			HttpServletResponse arg1) throws Exception {
 		ModelAndView  view = new ModelAndView("/index.jsp");
-		view.addObject("mesg", "É××Ó");
+		view.addObject("mesg", "å‹ºå­");
 		return view;
 	}
 

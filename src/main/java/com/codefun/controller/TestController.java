@@ -27,7 +27,7 @@ public class TestController {
     @RequestMapping(value="/todo.do")
     public @ResponseBody   TestVo todo(){
 
-        System.out.println("Controller HandlerÖ´ÐÐ");
+        System.out.println("Controller Handleræ‰§è¡Œ");
         TestVo vo = new TestVo();
         vo.setName(service.todo());
         vo.setId(1L);

@@ -70,7 +70,7 @@ public class TimeClientHandle implements Runnable {
             }
         }
 
-        // ¶àÂ·¸´ÓÃÆ÷¹Ø±Õºó£¬ËùÓĞ×¢²áÔÚÉÏÃæµÄChannelºÍPipeµÈ×ÊÔ´¶¼»á±»×Ô¶¯È¥×¢²á²¢¹Ø±Õ£¬ËùÒÔ²»ĞèÒªÖØ¸´ÊÍ·Å×ÊÔ´
+        // å¤šè·¯å¤ç”¨å™¨å…³é—­åï¼Œæ‰€æœ‰æ³¨å†Œåœ¨ä¸Šé¢çš„Channelå’ŒPipeç­‰èµ„æºéƒ½ä¼šè¢«è‡ªåŠ¨å»æ³¨å†Œå¹¶å…³é—­ï¼Œæ‰€ä»¥ä¸éœ€è¦é‡å¤é‡Šæ”¾èµ„æº
         if (selector != null)
             try {
                 selector.close();
@@ -82,14 +82,14 @@ public class TimeClientHandle implements Runnable {
     private void handleInput(SelectionKey key) throws IOException {
 
         if (key.isValid()) {
-            // ÅĞ¶ÏÊÇ·ñÁ¬½Ó³É¹¦
+            // åˆ¤æ–­æ˜¯å¦è¿æ¥æˆåŠŸ
             SocketChannel sc = (SocketChannel) key.channel();
             if (key.isConnectable()) {
                 if (sc.finishConnect()) {
                     sc.register(selector, SelectionKey.OP_READ);
                     doWrite(sc);
                 } else
-                    System.exit(1);// Á¬½ÓÊ§°Ü£¬½ø³ÌÍË³ö
+                    System.exit(1);// è¿æ¥å¤±è´¥ï¼Œè¿›ç¨‹é€€å‡º
             }
             if (key.isReadable()) {
                 ByteBuffer readBuffer = ByteBuffer.allocate(1024);
@@ -102,18 +102,18 @@ public class TimeClientHandle implements Runnable {
                     System.out.println("Now is : " + body);
                     this.stop = true;
                 } else if (readBytes < 0) {
-                    // ¶Ô¶ËÁ´Â·¹Ø±Õ
+                    // å¯¹ç«¯é“¾è·¯å…³é—­
                     key.cancel();
                     sc.close();
                 } else
-                    ; // ¶Áµ½0×Ö½Ú£¬ºöÂÔ
+                    ; // è¯»åˆ°0å­—èŠ‚ï¼Œå¿½ç•¥
             }
         }
 
     }
 
     private void doConnect() throws IOException {
-        // Èç¹ûÖ±½ÓÁ¬½Ó³É¹¦£¬Ôò×¢²áµ½¶àÂ·¸´ÓÃÆ÷ÉÏ£¬·¢ËÍÇëÇóÏûÏ¢£¬¶ÁÓ¦´ğ
+        // å¦‚æœç›´æ¥è¿æ¥æˆåŠŸï¼Œåˆ™æ³¨å†Œåˆ°å¤šè·¯å¤ç”¨å™¨ä¸Šï¼Œå‘é€è¯·æ±‚æ¶ˆæ¯ï¼Œè¯»åº”ç­”
         if (socketChannel.connect(new InetSocketAddress(host, port))) {
             socketChannel.register(selector, SelectionKey.OP_READ);
             doWrite(socketChannel);

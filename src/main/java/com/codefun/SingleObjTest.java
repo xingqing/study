@@ -5,8 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 /** 
  * 
- * @author ×÷Õß :		E-mail: 
- * @version ´´½¨Ê±¼ä£º2016-11-29 ÉÏÎç9:48:07 
+ * @author ä½œè€… :		E-mail: 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2016-11-29 ä¸Šåˆ9:48:07 
  * 
  */
 

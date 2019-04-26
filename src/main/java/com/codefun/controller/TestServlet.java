@@ -18,28 +18,28 @@ import java.io.IOException;
 public class TestServlet extends HttpServlet {
 
     public TestServlet(){
-        System.out.println("¹¹Ôìµ÷ÓÃ");
+        System.out.println("æž„é€ è°ƒç”¨");
     }
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        System.out.println("initµ÷ÓÃ");
+        System.out.println("initè°ƒç”¨");
         super.init(config);
     }
 
     @Override
     public void destroy() {
-        System.out.println("destroyµ÷ÓÃ");
+        System.out.println("destroyè°ƒç”¨");
         super.destroy();
     }
 
     @PostConstruct
     private void myInit(){
-        System.out.println("PostConstructµ÷ÓÃ");
+        System.out.println("PostConstructè°ƒç”¨");
     }
     @PreDestroy
     private void mydestroy(){
-        System.out.println("PreDestroyµ÷ÓÃ");
+        System.out.println("PreDestroyè°ƒç”¨");
     }
 
 

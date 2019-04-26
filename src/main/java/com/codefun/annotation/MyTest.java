@@ -25,23 +25,23 @@ class MyReflection
         MyTest myTest = new MyTest();
         Class<MyTest> c = MyTest.class;
         Method method = c.getMethod("output", new Class[] {});
-        //Èç¹ûMyTestÀàÃûÉÏÓĞ×¢½â@MyAnnotationĞŞÊÎ£¬ÔòÎªtrue
+        //å¦‚æœMyTestç±»åä¸Šæœ‰æ³¨è§£@MyAnnotationä¿®é¥°ï¼Œåˆ™ä¸ºtrue
         if(MyTest.class.isAnnotationPresent(MyAnnotation.class))
         {
             System.out.println("have annotation");
         }
         if (method.isAnnotationPresent(MyAnnotation.class))
         {
-            method.invoke(myTest, null); //µ÷ÓÃoutput·½·¨
-            //»ñÈ¡·½·¨ÉÏ×¢½â@MyAnnotationµÄĞÅÏ¢
+            method.invoke(myTest, null); //è°ƒç”¨outputæ–¹æ³•
+            //è·å–æ–¹æ³•ä¸Šæ³¨è§£@MyAnnotationçš„ä¿¡æ¯
             MyAnnotation myAnnotation = method.getAnnotation(MyAnnotation.class);
             String hello = myAnnotation.hello();
             String world = myAnnotation.world();
-            System.out.println(hello + ", " + world);//´òÓ¡ÊôĞÔhelloºÍworldµÄÖµ
-            System.out.println(myAnnotation.array().length);//´òÓ¡ÊôĞÔarrayÊı×éµÄ³¤¶È
+            System.out.println(hello + ", " + world);//æ‰“å°å±æ€§helloå’Œworldçš„å€¼
+            System.out.println(myAnnotation.array().length);//æ‰“å°å±æ€§arrayæ•°ç»„çš„é•¿åº¦
             System.out.println(myAnnotation.style());
         }
-        //µÃµ½output·½·¨ÉÏµÄËùÓĞ×¢½â£¬µ±È»ÊÇ±»RetentionPolicy.RUNTIMEĞŞÊÎµÄ
+        //å¾—åˆ°outputæ–¹æ³•ä¸Šçš„æ‰€æœ‰æ³¨è§£ï¼Œå½“ç„¶æ˜¯è¢«RetentionPolicy.RUNTIMEä¿®é¥°çš„
         Annotation[] annotations = method.getAnnotations();
         for (Annotation annotation : annotations)
         {

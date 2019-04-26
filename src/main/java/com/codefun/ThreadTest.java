@@ -1,8 +1,8 @@
 package com.codefun;
 /** 
  * 
- * @author ×÷Õß :		E-mail: 
- * @version ´´½¨Ê±¼ä£º2016-7-28 ÏÂÎç3:34:59 
+ * @author ä½œè€… :		E-mail: 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2016-7-28 ä¸‹åˆ3:34:59 
  * 
  */
 
@@ -13,7 +13,7 @@ public class ThreadTest {
 		flag = value;
 		count++;
 		if(count==100){
-			System.out.println("¿ªÊ¼Êä³ö");
+			System.out.println("å¼€å§‹è¾“å‡º");
 			ThreadTest.class.notifyAll();
 		}else{
 			try {
@@ -59,7 +59,7 @@ public class ThreadTest {
 			}
 		}
 		
-		System.out.println("Íê³É");
+		System.out.println("å®Œæˆ");
 		
 		
 	}
